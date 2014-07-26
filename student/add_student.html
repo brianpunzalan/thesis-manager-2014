@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+	<title>Student Record Manager</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css/bootstrap.css">
+	<script type="text/javascript" src="/stylesheets/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/stylesheets/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url(/image/background.jpg); background-repeat: no-repeat; background-size: 100% 200%;">
+
+	
+	
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class = "container">
+
+			<a href="/" class="navbar-brand">Advanced Web Computing</a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/student/home"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+					<li class="active"><a href="/student/new"><span class="glyphicon glyphicon-file"></span>  Create</a></li>
+					<li><a href="/student/list"><span class="glyphicon glyphicon-list-alt"></span>  List</a></li>
+					<li class="dropdown">
+            			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
+            			<b class="caret"></b></a>
+            			<ul class="dropdown-menu" role="menu">
+            				<li role="presentation" class="dropdown-header">Modules</li>
+              				<li><a href="/thesis/home">Thesis</a></li>
+              				<li><a href="/adviser/home">Adviser</a></li>
+              				<li><a href="/student/home">Student</a></li>
+              				<li role="presentation" class="divider"></li>
+              				<li role="presentation" class="dropdown-header">About Us</li>
+              				<li><a href="/module-1/1">Developer 1</a></li>
+              				<li><a href="/module-1/2">Developer 2</a></li>
+            			</ul>
+          			</li>
+				</ul>
+			</div>
+
+		</div>	
+	</div>
+<div class="container" style="color:#fff;">
+	<h1>Add New Student Record</h1>
+	<hr>
+	<form action="/student/new" method="post" onsubmit="return validate(this)">
+		
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="pull-right">Student Number :</h3>
+			</div>
+			<div class="col-md-4" style="margin-top:20px;">
+				<input type="text" class="form-control" required name="student_number">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="pull-right">First Name :</h3>
+			</div>
+			<div class="col-md-4" style="margin-top:20px;">
+				<input type="text" class="form-control" required name="fname">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3" >
+				<h3 class="pull-right">Last Name :</h3>
+			</div>
+			<div class="col-md-4" style="margin-top:20px;">
+				<input type="text" class="form-control" required name="lname">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="pull-right">Email :</h3>
+			</div>
+			<div class="col-md-4" style="margin-top:20px;">
+				<input type="email" class="form-control" required name="email">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="pull-right">Phone Number :</h3>
+			</div>
+			<div class="col-md-4" style="margin-top:20px;">
+				<input type="text" class="form-control" required name="phone">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="pull-right">Department :</h3>
+			</div>
+			<div class="col-md-2" style="margin-top:20px;">
+				<select class="form-control" name="department">
+					<option value="CpE">CpE</option>
+					<option value="CE">CE</option>
+					<option value="ME">ME</option>
+					<option value="EE">EE</option>
+					<option value="IE">IE</option>
+					<option value="ECE">ECE</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-4 btn-group btn-group-lg pull-left" style="margin-top:40px;">
+				<input type="submit" class="btn btn-primary" value="Save">
+				<input type="reset" class="btn btn-default" value="Clear">
+			</div>
+		</div>
+<!--
+		<div class="input-group input-group-lg" style="margin-bottom:25px;">
+  			<span class="input-group-addon">Title</span>
+  			<input type="text" class="form-control" name="title">
+		</div>
+
+		<div class="input-group input-group-lg" style="margin-bottom:25px;">
+  			<span class="input-group-addon">Description</span>
+  			<textarea rows="5" class="form-control" name="desc"></textarea>
+		</div>
+
+		<div class="input-group input-group-lg" style="margin-bottom:25px;">
+  			<span class="input-group-addon">School Year</span>
+  				<select class="form-control" name="syear">
+  					<option>2013-2014</option>
+  					<option>2012-2013</option>
+  					<option>2011-2012</option>
+  					<option>2010-2011</option>
+  					<option>2009-2010</option>
+  				</select>
+		</div>
+
+		<div class="input-group input-group-lg" style="margin-bottom:25px;">
+  			<span class="input-group-addon">Status</span>
+  			<span class="form-control">
+  			<label class="radio-inline"><input type="radio" name="status" value="Active" checked="checked"> Active </label>
+			<label class="radio-inline"><input type="radio" name="status" value="Inactive"> Inactive </label>
+			<label class="radio-inline"><input type="radio" name="status" value="Rejected"> Rejected </label>
+			<label class="radio-inline"><input type="radio" name="status" value="Pending"> Pending </label>
+			<label class="radio-inline"><input type="radio" name="status" value="For Removal"> For Removal </label>
+			</span>
+		</div>
+		<div class="btn-group btn-group-lg pull-right">
+			<input type="submit" class="btn btn-primary" value="Save">
+			<input type="reset" class="btn btn-default" value="Clear">
+		</div>
+	</form>
+	-->
+	<script type="text/javascript">
+		function validate(myForm){
+
+			if(myForm["fname"].value.length == 0 || myForm["lname"].value.length == 0 || myForm["email"].value.length == 0 || myForm["phone"].value.length == 0 ){
+				alert("Please do not leave blank entries.");
+				return false;
+			}
+			else{
+				alert("Successful");
+				myForm.submit();
+			}
+
+		}
+	</script>
+</div>
+</body>
+</html>
+{% endautoescape %}

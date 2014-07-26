@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{thesis.title}}</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/css/cover.css">
+	<script type="text/javascript" src="/stylesheets/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/stylesheets/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript"></script>
+	
+	<div class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0px;">
+		<div class = "container">
+
+			<a href="/" class="navbar-brand">Advanced Web Computing</a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/thesis/home"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+					<li><a href="/thesis/new"><span class="glyphicon glyphicon-file"></span>  Create</a></li>
+					<li><a href="/thesis/list"><span class="glyphicon glyphicon-list-alt"></span>  List</a></li>
+					<li class="dropdown">
+            			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
+            			<b class="caret"></b></a>
+            			<ul class="dropdown-menu" role="menu">
+            				<li role="presentation" class="dropdown-header">Modules</li>
+              				<li><a href="/thesis/home">Thesis</a></li>
+              				<li><a href="/adviser/home">Adviser</a></li>
+              				<li><a href="/student/home">Student</a></li>
+              				<li role="presentation" class="divider"></li>
+              				<li role="presentation" class="dropdown-header">About Us</li>
+              				<li><a href="/module-1/1">Developer 1</a></li>
+              				<li><a href="/module-1/2">Developer 2</a></li>
+            			</ul>
+          			</li>
+				</ul>
+			</div>
+
+		</div>	
+	</div>
+
+	<div class="site-wrapper" style="margin-top:0px;">
+		
+		<div class="site-wrapper inner">
+			<div class="cover-container">
+				<div class="masthead clearfix">
+					<div class="inner">
+					</div>
+				</div>
+				<div class="inner cover">
+					<h1 class="cover-heading">{{thesis.title}}
+						<h5>
+							{% if (thesis.status == "Active") %}
+							<span class="label label-primary">Active</span>
+							{% endif %}
+							{% if (thesis.status == "Inactive") %}
+							<span class="label label-info">Inactive</span>
+							{% endif %}
+							{% if (thesis.status == "Rejected") %}
+							<span class="label label-danger">Rejected</span>
+							{% endif %}
+							{% if (thesis.status == "Pending") %}
+							<span class="label label-default">Pending</span>
+							{% endif %}
+							{% if (thesis.status == "For Removal") %}
+							<span class="label label-warning">For Removal</span>
+							{% endif %}
+						</h5>
+
+					</h1>
+					<hr>
+					<p class="lead" style="text-align:justify">{{thesis.description}}</p>
+				</div>
+				<div class="mastfooter">
+					<div class="inner">
+						<p>School Year : {{thesis.schoolyear}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+application: coe2043-team-3
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /(.*\.jpeg)
+  mime_type: image/jpeg
+  static_files: template/\1
+  upload: template/(.*\.jpeg)
+
+- url: /image
+  static_dir: image
+  mime_type: image/jpeg
+
+- url: /.*
+  script: main.application
+
+# [START libraries]
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+# [END libraries]

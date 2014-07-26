@@ -1,0 +1,54 @@
+<html>
+<head>
+
+	<title>Personal Webpage</title>
+</head>
+<body>
+	<body background = "http://blog.graffies.com/wp-content/uploads/sites/4/2014/03/Abstract-HD-Wallpapers-HD-Abstract-Wallpapers-Abstract-Wallpapers-12.jpg" style="color: red;" >
+	<center>
+	<h1>John Christian G. Co</h1>
+	<img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/430189_3276779972915_1734591594_n.jpg" width= 200 height= 150 >
+	<h3> Tagline: </h3> <p>"YOLO"</p>
+		<h3>About Me:</h3><p> You can call me jc for short and never ask me again </p>
+		<h3>Contact Number:</h3>
+		<p>09178190923</p>
+		<h3>Email:</h3>
+		<p>jcbobei23@gmail.com</p>
+<table border= 2px>
+	<bgcolor = "#C2DFFF">
+	<tr><td>
+		<a href="https://www.facebook.com/?q=#/jaycee.yours"><img src = "http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-button-blue-icon.png" width= "48px" height= "48px"></a>
+		<a href="https://github.com/jcbobei"><img src="http://darkfall.me/resource/github_icon.png" width= "48px" height= "48px"></a>
+		<a href="http://steamcommunity.com/profiles/76561198108499866"><img src="http://atf.3dn.ru/ico/steamorb.png" width= "48px" height= "48px"></a>
+		<a href="http://www.codecademy.com/jcbobei"><img src=""><img src="http://www.appsforaptitude.org/learnhtml/gallery/codeacademy.png" width= "48px" height= "48px"></a>
+		<a href="https://plus.google.com/u/0/108569205825814204274"><img src="https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/512/google_plus.png" width= "48px" height= "48px"></a>
+	</tr></td>
+	</table>
+	<div style="margin-top: 30px; font-size: 20px;">
+		<form action="/sign?guestbook_name={{ name }}" method="post" style="padding-top:50px;">
+			<textarea name="content" rows="3" cols="100" style="display:block; margin-right: 20px; margin-top:30px; margin-bottom:0px;"></textarea>
+			<p style="display:inline-block; margin-bottom:20px;" class="panel-body">Please login and comment.</p>
+			<br>
+			<input type="submit" value="Comment" style="display:block;">
+			<a href="{{ url|safe }}" style="display:block;">{{ url_linktext }}</a>
+		</form>
+			<div>
+				<h2>
+				Comments:
+				</h2>
+			</div>
+			<br>
+			<div style="padding-left:20px; line-height: 50px;">
+					{% for greeting in greetings %}
+      					{% if greeting.author %}
+        					<b>{{ greeting.author.nickname() }}</b> wrote:
+     	 				{% else %}
+       					An anonymous person wrote:
+      					{% endif %}
+      					<blockquote>{{ greeting.content }}</blockquote>
+      					<br>
+    				{% endfor %}
+			</div>
+</center>
+</body>
+</html>
