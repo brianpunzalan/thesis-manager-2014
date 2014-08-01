@@ -74,7 +74,7 @@ class MainPage(webapp2.RequestHandler):
 
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('index.html')
-        writeTemplate(self,template)
+        writeTemplate(self,template,template_values,True)
         
 # [END main_page]
 
@@ -415,7 +415,6 @@ class StudentEditHandler(webapp2.RequestHandler):
         template_values =  {
             'student' : student
         }
-
         if student is None :
             template = JINJA_ENVIRONMENT.get_template('error_view.html')
         else:
