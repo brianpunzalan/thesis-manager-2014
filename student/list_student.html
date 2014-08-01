@@ -1,55 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Student Record Manager</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/css/bootstrap.css">
-	<script type="text/javascript" src="/stylesheets/js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="/stylesheets/js/bootstrap.js"></script>
-</head>
-<body>
-	<div class="navbar navbar-inverse navbar-static-top">
-		<div class = "container">
-
-
-			<a href="/" class="navbar-brand">Advanced Web Computing</a>
-
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-
-			<div class="collapse navbar-collapse navHeaderCollapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/student/home"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-					<li><a href="/student/new"><span class="glyphicon glyphicon-file"></span>  Create</a></li>
-					<li class="active"><a href="/student/list"><span class="glyphicon glyphicon-list-alt"></span>  List</a></li>
-					<li class="dropdown">
-            			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
-            			<b class="caret"></b></a>
-            			<ul class="dropdown-menu" role="menu">
-            				<li role="presentation" class="dropdown-header">Modules</li>
-              				<li><a href="/thesis/home">Thesis</a></li>
-              				<li><a href="/adviser/home">Adviser</a></li>
-              				<li><a href="/student/home">Student</a></li>
-              				<li role="presentation" class="divider"></li>
-              				<li role="presentation" class="dropdown-header">About Us</li>
-              				<li><a href="/module-1/1">Developer 1</a></li>
-              				<li><a href="/module-1/2">Developer 2</a></li>
-            			</ul>
-          			</li>
-				</ul>
-			</div>
-
-		</div>	
-	</div>
-
+<html class="student">
+<body class="content student">
 	{% if (result) :  %}
 	<div class="table-responsive container">
 
 	<h1>List of Students</h1>
-		<table class="table table-striped">
+		<table class="table table-hover" style="color:#000;">
 			<thead>
 				<th>Student Number</th>
 				<th>Name</th>

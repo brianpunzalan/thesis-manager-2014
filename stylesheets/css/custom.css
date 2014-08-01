@@ -1,0 +1,70 @@
+@font-face{
+	font-family: OpenSans;
+	src: url(OpenSans-Light.ttf);
+	font-weight: bold;
+}
+
+.opensans{
+	font-family: OpenSans,Arial,"Times New Roman";
+}
+
+.frontCaptions > p {
+	float: right !important;
+	font-family: OpenSans !important;
+	font-size: 45px;
+	color: #fff;
+	line-height: 56px;
+	text-align: left;
+	text-shadow: none;
+	padding: 10px 3px;
+	vertical-align: middle;
+	top: 190px;
+	right: 5%;
+	width: 40%;
+	bottom: auto;
+	left: auto;
+	position: absolute;
+}
+
+.imgsliders > img{
+	float: left !important;
+	vertical-align: middle;
+	position: absolute;
+	width: 40%;
+	left:5%;
+	right: auto;
+	top: 190px;
+	bottom: auto;
+}
+
+.content{
+	position: absolute;
+	color: #fff;
+	width: 100%;
+	height: auto;
+}
+
+.student{
+	background-color:#F1B14F;
+}
+
+.adviser{
+	background-color: #6EBEC5;
+}
+
+.thesis{
+	background-color: #FF7C6D;
+}
+
+.invalid{
+	background-color: #000;
+}
+
+i{
+	text-decoration: none;
+	color: white;
+}
+i:hover{
+	color: black;
+	text-decoration: underline;
+}

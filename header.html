@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Team 3</title>
+  <script type="text/javascript" src="/stylesheets/js/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/css/cover.css">
+  <link type="text/css" href="/stylesheets/css/bootstrap.css" rel="stylesheet">
+  <script src="/stylesheets/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-static-top" style="background-color: transparent;">
+    <div class = "container">
+
+      <a href="/" class="navbar-brand">Advanced Web Computing</a>
+
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>&nbsp;Thesis<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/thesis/new">Create New Thesis</a></li>
+              <li><a href="/thesis/list">View All Thesis</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;Adviser<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/adviser/new">Create New Adviser</a></li>
+              <li><a href="/adviser/list">View All Adviser</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;Student<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/student/new">Create New Student</a></li>
+              <li><a href="/student/list">View All Students</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/module-1/1">Developer 1</a></li>
+              <li><a href="/module-1/2">Developer 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="{{url|safe}}">{{url_linktext}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

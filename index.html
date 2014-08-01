@@ -1,76 +1,41 @@
 <!DOCTYPE html>
 {% autoescape true %}
 <html>
-  <head>
-    <script type="text/javascript" src="/stylesheets/js/jquery-2.1.1.min.js"></script>
-    <link type="text/css" href="/stylesheets/css/bootstrap.css" rel="stylesheet" />
-    <script src="/stylesheets/js/bootstrap.js"></script>
-  </head>
-  <body>
-    <div class="navbar navbar-inverse navbar-static-top">
-    <div class = "container">
-
-      <a href="/" class="navbar-brand">Advanced Web Computing</a>
-
-      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="collapse navbar-collapse navHeaderCollapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-          <li role="presentation" class="divider">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>
-            <b class="caret"></b></a>
-            <ul class="dropdown-menu" role="menu">
-              <li class="dropdown-header">Modules</li>
-              <li><a href="/thesis/home">Thesis</a></li>
-              <li><a href="/adviser/home">Adviser</a></li>
-              <li><a href="/student/home">Student</a></li>
-              <li role="presentation" class="divider"></li>
-              <li class="dropdown-header">About Us</li>
-              <li><a href="/module-1/1">Developer 1</a></li>
-              <li><a href="/module-1/2">Developer 2</a></li>
-              <li role="presentation" class="divider"></li>
-              <li><a href="{{ url|safe }}">{{ url_linktext }}</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>  
-  </div>
-    <div class="container">
-    {% for greeting in greetings %}
-      {% if greeting.author %}
-        <div class="panel panel-primary">
-          <div class="panel panel-heading">  
-              <h3 class="panel-title">{{ greeting.author.nickname() }}</h3> wrote:
-          </div>    
-      {% else %}
-        <div class="panel panel-default">
-          <div class="panel panel-heading">  
-            <p class="panel-title">An anonymous person wrote:</p>
-          </div>
-              {% endif %}
-          <div class="panel panel-body">
-            <b>{{ greeting.content }}</b>
-          </div>
+<body>
+  <div id="background-carousel" class="carousel slide" data-ride="carousel" style="position:absolute; top:0px; left:0px; width:100%;">
+    <ol class="carousel-indicators">
+      <li data-target="#background-carousel" data-slide-to = "0" class="active"></li>
+      <li data-target="#background-carousel" data-slide-to = "1" class="active"></li>
+      <li data-target="#background-carousel" data-slide-to = "2" class="active"></li>
+    </ol>
+    <div class="carousel-inner" style="width:100%;">
+      <div class="item active" style="background-color:#FF7C6D; height: 680px;">
+        <div class="imgsliders">
+          <img src="/image/research.jpg">
         </div>
-    {% endfor %}
+        <div class="frontCaptions opensans">
+          <p>Module 1 - Thesis manager that manage researches of engineering students where you can create and view records of different theses, mainly in PUP</p>
+          <a href=""></a>
+        </div>
+      </div>
+      <div class="item" style="background-color:#6EBEC5; height: 680px;">
+        <div class="imgsliders">
+          <img src="/image/adviser.jpg">
+        </div>
+        <div class="frontCaptions opensans">
+          <p>Module 2 - Adviser manager that manage records of PUP engineering advisers where you can create and view records</p>
+        </div>
+      </div>
+      <div class="item" style="background-color:#F1B14F; height: 680px;">
+        <div class="imgsliders">
+          <img src="/image/students.jpg">
+        </div>
+        <div class="frontCaptions opensans">
+          <p>Module 3 - Student manager that manage records of PUP engineering students where you can create and view records</p>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  <div class="container">
-        <form class="form-signin" action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-          <div><input type="text" class="form-control" name="content"></input></div>
-          <div><input type="submit" class="btn btn-lg btn-primary" value="Sign Guestbook"></div>
-        </form>
-        <form class="form-signin">
-            <h4 class="form-signin-heading">Guestbook name:</h4>
-            <input value="{{ guestbook_name }}" name="guestbook_name">
-            <input type="submit" class="btn btn-sm btn-default btn-block" value="switch">
-  </div>
-  </body>
+</body>
 </html>
 {% endautoescape %}
